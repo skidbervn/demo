@@ -1,29 +1,24 @@
--- Tham chiếu đến các đối tượng GUI
 local screenGui = script.Parent
 local menuFrame = screenGui:WaitForChild("Frame")
-local startButton = menuFrame:WaitForChild("StartButton")
+local homeButton = menuFrame:WaitForChild("HomeButton")
+local libraryButton = menuFrame:WaitForChild("LibraryButton")
 local settingsButton = menuFrame:WaitForChild("SettingsButton")
-local helpButton = menuFrame:WaitForChild("HelpButton")
 
--- Hàm xử lý nút Start
-local function onStartButtonClicked()
-    print("Start button clicked!")
-    -- Thực hiện hành động bắt đầu trò chơi
+local function onHomeButtonClicked()
+    print("Home button clicked!")
+  
 end
 
--- Hàm xử lý nút Settings
+local function onLibraryButtonClicked()
+    print("Library button clicked!")
+    
+end
+
 local function onSettingsButtonClicked()
     print("Settings button clicked!")
-    -- Thực hiện hành động mở cài đặt
+
 end
 
--- Hàm xử lý nút Help
-local function onHelpButtonClicked()
-    print("Help button clicked!")
-    -- Thực hiện hành động mở trợ giúp
-end
-
--- Kết nối các hàm với các sự kiện nhấp chuột
-startButton.MouseButton1Click:Connect(onStartButtonClicked)
+homeButton.MouseButton1Click:Connect(onHomeButtonClicked)
+libraryButton.MouseButton1Click:Connect(onLibraryButtonClicked)
 settingsButton.MouseButton1Click:Connect(onSettingsButtonClicked)
-helpButton.MouseButton1Click:Connect(onHelpButtonClicked)
