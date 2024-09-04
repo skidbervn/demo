@@ -1,38 +1,29 @@
--- Hàm để hiển thị menu và lấy lựa chọn của người dùng
-local function showMenu()
-    print("Chọn một tùy chọn:")
-    print("1. Tùy chọn 1")
-    print("2. Tùy chọn 2")
-    print("3. Tùy chọn 3")
-    print("4. Thoát")
+-- Tham chiếu đến các đối tượng GUI
+local screenGui = script.Parent
+local menuFrame = screenGui:WaitForChild("Frame")
+local startButton = menuFrame:WaitForChild("StartButton")
+local settingsButton = menuFrame:WaitForChild("SettingsButton")
+local helpButton = menuFrame:WaitForChild("HelpButton")
 
-    -- Đọc lựa chọn của người dùng
-    local choice = io.read("*n")
-
-    return choice
+-- Hàm xử lý nút Start
+local function onStartButtonClicked()
+    print("Start button clicked!")
+    -- Thực hiện hành động bắt đầu trò chơi
 end
 
--- Hàm xử lý lựa chọn của người dùng
-local function handleChoice(choice)
-    if choice == 1 then
-        print("Bạn đã chọn tùy chọn 1")
-        -- Thực hiện hành động cho tùy chọn 1
-    elseif choice == 2 then
-        print("Bạn đã chọn tùy chọn 2")
-        -- Thực hiện hành động cho tùy chọn 2
-    elseif choice == 3 then
-        print("Bạn đã chọn tùy chọn 3")
-        -- Thực hiện hành động cho tùy chọn 3
-    elseif choice == 4 then
-        print("Thoát chương trình")
-        os.exit()  -- Thoát chương trình
-    else
-        print("Lựa chọn không hợp lệ. Vui lòng chọn lại.")
-    end
+-- Hàm xử lý nút Settings
+local function onSettingsButtonClicked()
+    print("Settings button clicked!")
+    -- Thực hiện hành động mở cài đặt
 end
 
--- Vòng lặp chính của chương trình
-while true do
-    local choice = showMenu()
-    handleChoice(choice)
+-- Hàm xử lý nút Help
+local function onHelpButtonClicked()
+    print("Help button clicked!")
+    -- Thực hiện hành động mở trợ giúp
 end
+
+-- Kết nối các hàm với các sự kiện nhấp chuột
+startButton.MouseButton1Click:Connect(onStartButtonClicked)
+settingsButton.MouseButton1Click:Connect(onSettingsButtonClicked)
+helpButton.MouseButton1Click:Connect(onHelpButtonClicked)
